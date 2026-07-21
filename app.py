@@ -71,7 +71,7 @@ if st.button("🚀 Generate Organizations", type="primary"):
         prompt = f"""
 You are conducting business research.
 
-Generate a comprehensive list of REAL organizations, publications, and media outlets related to the following industry and location.
+Generate a comprehensive list of REAL organizations related to the following industry and location.
 
 Industry:
 {industry}
@@ -79,17 +79,17 @@ Industry:
 Location:
 {location}
 
-Include entities such as:
+Include organizations such as:
 - Trade associations
 - Professional societies
 - Chambers of commerce
+- Industry councils
 - Nonprofit organizations
-- Councils
 - Alliances
 - Institutes
-- Industry publications
-- Industry magazines
-- Industry media outlets
+- Business federations
+- Industry publications and magazines
+- Media organizations focused on the industry
 
 Include organizations that are:
 - Local
