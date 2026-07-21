@@ -31,7 +31,7 @@ st.markdown(
 Generate a list of organizations, associations, publications, and media outlets
 for a chosen industry and location using **Google Gemini AI**.
 
-Built for BCR internal use, by Violet Henderson, intern summer 2026.
+Built for BCR internal use by Violet Henderson, intern summer 2026.
 
 ### What you need
 - A web browser
