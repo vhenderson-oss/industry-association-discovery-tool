@@ -4,6 +4,11 @@ import pandas as pd
 import re
 from datetime import datetime
 
+import streamlit as st
+
+api_key = st.secrets["GEMINI_API_KEY"]
+st.write("Secret loaded successfully!")
+
 # ---------------------------
 # Page configuration
 # ---------------------------
