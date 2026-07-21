@@ -125,9 +125,9 @@ Do not include blank lines.
 
         # Process results
         organizations = sorted(list(set([
-            line.strip()
-            for line in response.text.split("\\n")
-            if line.strip()
+    		line.strip()
+    		for line in response.text.splitlines()
+    		if line.strip()
         ])))
 
         # Create dataframe
