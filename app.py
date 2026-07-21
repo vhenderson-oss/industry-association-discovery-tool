@@ -60,8 +60,8 @@ location = st.text_input(
 if st.button("🚀 Generate Organizations", type="primary"):
 
     if not industry or not location:
-    st.error("Please enter an industry and location.")
-    st.stop()
+    	st.error("Please enter an industry and location.")
+    	st.stop()
 
     try:
         # Initialize Gemini client
