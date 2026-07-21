@@ -4,10 +4,13 @@ import pandas as pd
 import re
 from datetime import datetime
 
-import streamlit as st
 
-api_key = st.secrets["GEMINI_API_KEY"]
-st.write("Secret loaded successfully!")
+# Load Gemini API key from Streamlit Secrets
+try:
+    api_key = st.secrets["GEMINI_API_KEY"]
+except Exception:
+    st.error("The Gemini API key is not configured in Streamlit Secrets.")
+    st.stop()
 
 # ---------------------------
 # Page configuration
@@ -29,19 +32,17 @@ Generate a list of organizations, associations, publications, and media outlets
 for a chosen industry and location using **Google Gemini AI**.
 
 ### What you need
-- A free Google account
-- A free Gemini API key from https://aistudio.google.com/
+- A web browser
+- An industry (e.g., Construction, Law, Healthcare)
+- A location (e.g., Los Angeles, Hawaii, Phoenix)
 """
 )
 
 # ---------------------------
 # User inputs
 # ---------------------------
-api_key = st.text_input(
-    "🔑 Gemini API Key",
-    type="password",
-    placeholder="Paste your API key here"
-)
+
+st.success("✅ AI connection is active and ready to generate organizations.")
 
 industry = st.text_input(
     "Industry",
@@ -58,9 +59,9 @@ location = st.text_input(
 # ---------------------------
 if st.button("🚀 Generate Organizations", type="primary"):
 
-    if not api_key or not industry or not location:
-        st.error("Please enter your API key, industry, and location.")
-        st.stop()
+    if not industry or not location:
+    st.error("Please enter an industry and location.")
+    st.stop()
 
     try:
         # Initialize Gemini client
